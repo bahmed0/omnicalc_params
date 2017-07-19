@@ -37,4 +37,14 @@ class CalculationsController < ApplicationController
        
        render("calculations/flexible_monthlypayment_template.html.erb") 
     end
+    def flex_random
+       # The incoming parameters for this action look like {"a_number" =>"5"}
+       # Rails stores that hash in a variable called params
+       
+       @min = params["min"].to_i
+       @max = params["max"].to_i
+       @random_number= rand(@min..@max)
+       
+       render("calculations/flexible_random_template.html.erb") 
+    end
 end
