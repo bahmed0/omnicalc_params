@@ -47,4 +47,8 @@ class CalculationsController < ApplicationController
        
        render("calculations/flexible_random_template.html.erb") 
     end
+    def square_form
+    
+     render("calculations/square_form_template.html.erb") 
+    end
 end
