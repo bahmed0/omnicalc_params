@@ -17,4 +17,13 @@ class CalculationsController < ApplicationController
        
        render("calculations/flexible_squareroot_template.html.erb") 
     end
+    def monthly_payment
+       # The incoming p:1rameters for this action look like {"a_number" =>"5"}
+       # Rails stores that hash in a variable called params
+       
+       @user_number = params["a_number"].to_i
+       @squareroot_number = @user_number**(0.5)
+       
+       render("calculations/flexible_monthlypayment_template.html.erb") 
+    end
 end
