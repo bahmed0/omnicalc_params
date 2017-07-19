@@ -51,4 +51,11 @@ class CalculationsController < ApplicationController
     
      render("calculations/square_form_template.html.erb") 
     end
+    
+    def process_square_form
+    
+    @the_number = params["the_user_number"].to_f
+    @the_square = @the_number**2
+    render("calculations/process_square_form_template.html.erb")
+    end
 end
